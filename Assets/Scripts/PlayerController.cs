@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,21 @@ public class PlayerController : MonoBehaviour
     {
         // Cache the Rigidbody component attached to this GameObject
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // Check every frame whether the Player has run out of health
+        if (health <= 0)
+        {
+            Debug.Log("Game Over!");
+
+            // Reloading the current scene destroys and recreates every
+            // GameObject in it, including the Player -- this automatically
+            // resets health and score back to their declared starting values,
+            // since a fresh PlayerController instance is created from scratch.
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     // FixedUpdate is called on a fixed timestep, in sync with the physics engine
@@ -57,13 +73,9 @@ public class PlayerController : MonoBehaviour
             // disappearing on contact -- remove this line if you'd rather
             // they behave like one-time hits, similar to Coins.
         }
-        else
+        else if (other.CompareTag("Goal"))
         {
-             if (other.CompareTag("Goal"))
-            {
-                Debug.Log("You Win!");
-            }
+            Debug.Log("You win!");
         }
     }
-    
 }
