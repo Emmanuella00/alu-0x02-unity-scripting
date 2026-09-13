@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     // Editable in the Inspector to easily tweak movement speed
     public float speed = 8f;
+    public int health = 5;
 
     private Rigidbody rb;
     private int score = 0;
@@ -46,6 +47,15 @@ public class PlayerController : MonoBehaviour
 
             // Remove the coin from the scene now that it's been collected
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Trap"))
+        {
+            health--;
+            Debug.Log("Health: " + health);
+
+            // Traps stay in the maze as a repeatable hazard rather than
+            // disappearing on contact -- remove this line if you'd rather
+            // they behave like one-time hits, similar to Coins.
         }
     }
 }
