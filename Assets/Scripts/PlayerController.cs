@@ -57,5 +57,13 @@ public class PlayerController : MonoBehaviour
             // disappearing on contact -- remove this line if you'd rather
             // they behave like one-time hits, similar to Coins.
         }
+        else
+        {
+             if (other.CompareTag("Goal"))
+            {
+                Debug.Log("You Win!");
+            }
+        }
     }
+    
 }
