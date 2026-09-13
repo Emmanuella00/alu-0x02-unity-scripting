@@ -1590,6 +1590,7 @@ GameObject:
   - component: {fileID: 396255157}
   - component: {fileID: 396255156}
   - component: {fileID: 396255160}
+  - component: {fileID: 396255161}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1717,6 +1718,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &396255161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396255155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4433265d5172b4296b423e6f093355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  speed: 8
 --- !u!1 &446356717
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +5955,7 @@ GameObject:
   - component: {fileID: 2077158310}
   - component: {fileID: 2077158309}
   - component: {fileID: 2077158308}
+  - component: {fileID: 2077158312}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6023,13 +6038,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077158307}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2147715, y: 0.6372828, z: -0.09927334, w: 0.733409}
-  m_LocalPosition: {x: 1.48, y: 19.34, z: 7.64}
+  m_LocalRotation: {x: 0.46444044, y: 0.55836517, z: -0.44896376, w: 0.5205334}
+  m_LocalPosition: {x: 22, y: 26, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 26.204, y: 83.891, z: 8.21}
+  m_LocalEulerAnglesHint: {x: 99.974, y: 288.497, z: 197.212}
+--- !u!114 &2077158312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077158307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f60049df32c59e4faae8d1012b5e7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  player: {fileID: 396255155}
 --- !u!1 &2082221699
 GameObject:
   m_ObjectHideFlags: 0
